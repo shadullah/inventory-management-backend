@@ -1,5 +1,12 @@
-from django.shortcuts import render,HttpResponse
+from rest_framework import viewsets
+from rest_framework import filters
+
+from .serializers import ProductSerializer
+from .models import products
 
 # Create your views here.
-def products(req):
-    return HttpResponse("hi i'm products page")
+class ProductView(viewsets.ModelViewSet):
+    queryset = products.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
