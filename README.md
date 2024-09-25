@@ -6,7 +6,7 @@ CRUD Inventory is an Product managing website which is built using React, Nextjs
 
 Watch Live backend url demo here:
 
-<a href="https://work-notes-server.onrender.com/">work notes backend</a>
+<a href="https://work-notes-server.onrender.com/">CRUD inventory backend</a>
 
 ## Installation
 
