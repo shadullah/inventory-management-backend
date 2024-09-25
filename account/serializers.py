@@ -1,9 +1,11 @@
-from django.contrib.auth.models import User
-from .models import Profile
+from django.contrib.auth import get_user_model
+from .models import MyOne
 
 from rest_framework import serializers
 
 # serializer start
+User=get_user_model()
+
 class RegistrationSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(required = True)
     class Meta:
@@ -28,7 +30,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         # account.is_active = False
         account.save()
 
-        Profile.objects.create(user=account)
+        MyOne.objects.create(user=account)
 
         return account
     
@@ -37,6 +39,11 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User 
         fields = ['id', 'username', 'first_name', 'last_name', 'email', 'is_superuser']
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=MyOne 
+        fields='__all__'
 
 class LoginSerializer(serializers.Serializer):
     username=serializers.CharField(required=True)
