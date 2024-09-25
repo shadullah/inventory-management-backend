@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 from rest_framework import filters,pagination
+from rest_framework.permissions import AllowAny
 
 from .serializers import ProductSerializer
-from .models import products
+from .models import Products
 
 # Create your views here.
 
@@ -15,8 +16,9 @@ class productPagination(pagination.PageNumberPagination):
 
 # product viewsets here
 class ProductView(viewsets.ModelViewSet):
-    queryset = products.objects.all().order_by("id")
+    queryset = Products.objects.all().order_by("id")
     serializer_class = ProductSerializer
+    permission_classes=[AllowAny]
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']
     pagination_class = productPagination

@@ -46,10 +46,12 @@ class loginVIew(APIView):
             if user is not None:
                 login(request, user)
                 refresh = RefreshToken.for_user(user)
+                accessToken=refresh.access_token
 
                 return Response({
                     'user':UserSerializer(user).data,
-                    'refresh': str(refresh)
+                    'refresh': str(refresh),
+                    'access':str(accessToken)
                 }, status=status.HTTP_200_OK)
             
         return Response({'error': 'invalid credentials'})

@@ -68,7 +68,7 @@ CORS_ALLOWED_ORIGINS = [
 from datetime import timedelta
 
 SIMPLE_JWT={
-    'ACCESS_TOKEN_EXPIRY': timedelta(minutes=60),
+    'ACCESS_TOKEN_EXPIRY': timedelta(minutes=720),
     'REFRESH_TOKEN_EXPIRY': timedelta(days=1)
 }
 
