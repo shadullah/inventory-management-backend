@@ -1,12 +1,12 @@
 # CRUD Inventory
 
-CRUD Inventory is an Product managing website which is built using React, Nextjs JavaScript, Tailwind Css, Django-rest-framework, Django, React-icons. 
+CRUD Inventory is an Product managing website which is built using React, Nextjs JavaScript, Tailwind Css, Django-rest-framework, Django, React-icons.
 
 ## Live Demo
 
 Watch Live backend url demo here:
 
-<a href="https://work-notes-server.onrender.com/">CRUD inventory backend</a>
+<a href="https://inventory-management-backend-nu.vercel.app/">CRUD inventory backend</a>
 
 ## Installation
 
@@ -37,4 +37,3 @@ py manage.py runserver
 - Django,
 - Django-rest-framework,
 - react-icons
-
